@@ -1,0 +1,44 @@
+<!--
+  Generated template for the Register page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="dark">
+        <ion-title>注册</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+    <form novalidate>
+        <ion-list style="margin-bottom: 1px;">
+            <ion-item>
+                <ion-label>手机号</ion-label>
+                <ion-input placeholder="请输入手机号" clearInput type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>验证码</ion-label>
+                <ion-input placeholder="请输入验证码" clearInput type="number"></ion-input>
+                <button ion-button item-right outline color="primary">
+                    获取验证码
+                </button>
+            </ion-item>
+            <ion-item>
+                <ion-label>密&nbsp;&nbsp;&nbsp;&nbsp;码</ion-label>
+                <ion-input placeholder="请输入密码" clearInput type="password"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <div padding-top padding-horizontal>
+            <button type="submit" ion-button block color="dark">注册</button>
+        </div>
+    </form>
+
+
+</ion-content>

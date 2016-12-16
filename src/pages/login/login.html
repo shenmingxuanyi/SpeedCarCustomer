@@ -1,0 +1,40 @@
+<ion-header>
+
+    <ion-navbar color="dark">
+        <ion-title>登录</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <form #form="ngForm" novalidate>
+        <ion-list style="margin-bottom: 1px;">
+            <ion-item>
+                <ion-label>手机号</ion-label>
+                <ion-input [(ngModel)]="driverModel.driverMobile" name="driverMobile" placeholder="请输入手机号" clearInput
+                           type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>密&nbsp;&nbsp;&nbsp;&nbsp;码</ion-label>
+                <ion-input [(ngModel)]="driverModel.password" name="password" placeholder="请输入密码" clearInput
+                           type="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>验证码</ion-label>
+                <ion-input [(ngModel)]="driverModel.verifyCode" name="verifyCode" placeholder="请输入验证码" clearInput
+                           type="number"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <div padding-top padding-horizontal>
+            <button type="submit" ion-button block color="dark" (click)="login($event,form)">登录</button>
+        </div>
+    </form>
+
+    <div padding-horizontal>
+        <button ion-button block clear color="primary">忘记密码？</button>
+    </div>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-menu [content]="content">
+    <ion-content style="background-color: #333;">
+
+        <ion-list style="background-color: #444;">
+            <button ion-item no-lines color="transparent">
+                <ion-thumbnail item-left>
+                    <img src="./assets/image/user-default.png">
+                </ion-thumbnail>
+                <h2>赵俊明</h2>
+                <p>2016-12-12 12:12:12</p>
+            </button>
+        </ion-list>
+
+        <ion-list no-border no-lines>
+            <button color="transparent" menuClose ion-item (click)="openPage(null)">
+                <ion-icon item-left name="ios-card" color="light"></ion-icon>
+                付款方式
+            </button>
+            <button color="transparent" menuClose ion-item (click)="openPage(null)">
+                <ion-icon item-left name="ios-car" color="light"></ion-icon>
+                我的行程
+            </button>
+            <button color="transparent" menuClose ion-item (click)="openPage(null)">
+                <ion-icon item-left name="ios-help-circle" color="light"></ion-icon>
+                帮助
+            </button>
+            <button color="transparent" menuClose ion-item (click)="openPage(null)">
+                <ion-icon item-left name="ios-chatboxes" color="light"></ion-icon>
+                消息中心
+            </button>
+            <button color="transparent" menuClose ion-item (click)="openPage(null)">
+                <ion-icon item-left name="ios-cog" color="light"></ion-icon>
+                个人设置
+            </button>
+
+
+        </ion-list>
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar color="dark">
+            <button ion-button color="transparent" block clear color="danger" menuClose (click)="securityExit($event)">
+                安全退出
+            </button>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
