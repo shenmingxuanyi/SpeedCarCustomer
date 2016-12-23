@@ -1,9 +1,8 @@
-import {NgModule} from '@angular/core';
-import {IonicApp, IonicModule} from 'ionic-angular';
+import {NgModule, ErrorHandler} from '@angular/core';
+import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {MyApp} from './app.component';
 import {FormValidateModule} from "../modules/form-validator/module";
-import {ChartPage} from "../pages/chart/chart";
 import {HttpResourceService} from "../providers/http-resource-service/http-resource-service";
 import {FormValidateService} from "../providers/form-validate-service/form-validate-service";
 import {PLATFORMS_CONFIG_CONSTANT} from "../configs/platform.config";
@@ -47,7 +46,7 @@ const MODULES = [FormValidateModule];
         ...COMPONENTS,
         ...PIPES
     ],
-    providers: [...PROVIDERS]
+    providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ...PROVIDERS]
 })
 export class AppModule {
 }
