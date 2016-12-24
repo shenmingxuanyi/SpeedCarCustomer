@@ -11,6 +11,7 @@ import {IndexPage} from "../pages/index/index";
 import {LoginPage} from "../pages/login/login";
 import {RegisterPage} from "../pages/register/register";
 import {MainPage} from "../pages/main/main";
+import {ProvideStorage} from "../configs/stroage.config";
 
 //页面
 const PAGES = [IndexPage, LoginPage, RegisterPage, MainPage];
@@ -21,7 +22,7 @@ const COMPONENTS = [];
 //指令
 const DIRECTIVES = [];
 //服务
-const PROVIDERS = [Storage, HttpResourceService, FormValidateService];
+const PROVIDERS = [HttpResourceService, FormValidateService];
 //模块
 const MODULES = [FormValidateModule];
 
@@ -46,7 +47,10 @@ const MODULES = [FormValidateModule];
         ...COMPONENTS,
         ...PIPES
     ],
-    providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ...PROVIDERS]
+    providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, {
+        provide: Storage,
+        useFactory: ProvideStorage
+    }, ...PROVIDERS]
 })
 export class AppModule {
 }

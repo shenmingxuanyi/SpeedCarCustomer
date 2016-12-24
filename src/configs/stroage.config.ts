@@ -1,6 +1,11 @@
+import {Storage} from '@ionic/storage';
 /**
  * Created by zhaojunming on 16/11/7.
  */
+
+export function ProvideStorage() {
+    return new Storage(['sqlite', 'websql', 'indexeddb', 'localstorage'], {name: 'SPEED_CAR_CUSTOM'});
+}
 
 export const LOCAL_STORAGE_KEY = {
     USER: {
