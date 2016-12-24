@@ -3,6 +3,7 @@ import {Nav, Platform} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
 import {IndexPage} from "../pages/index/index";
 import {LoginPage} from "../pages/login/login";
+import {MainPage} from "../pages/main/main";
 
 
 @Component({
@@ -16,12 +17,16 @@ export class MyApp {
 
     constructor(public platform: Platform) {
         this.initializeApp();
+        this.rootPage = MainPage;
     }
 
     initializeApp() {
         this.platform.ready().then(() => {
             StatusBar.styleDefault();
-            Splashscreen.hide();
+            setTimeout(() => {
+                Splashscreen.hide();
+            }, 300);
+
         });
     }
 
@@ -30,6 +35,6 @@ export class MyApp {
     }
 
     securityExit($event) {
-        this.nav.setRoot(LoginPage)
+        this.nav.setRoot(IndexPage)
     }
 }

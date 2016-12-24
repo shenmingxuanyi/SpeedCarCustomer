@@ -1,22 +1,39 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, MenuController} from 'ionic-angular';
 
 /*
-  Generated class for the Main page.
+ Generated class for the Main page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
 @Component({
-  selector: 'page-main',
-  templateUrl: 'main.html'
+    selector: 'page-main',
+    templateUrl: 'main.html'
 })
 export class MainPage {
 
-  constructor(public navCtrl: NavController) {}
+    constructor(public navCtrl: NavController, public menuController: MenuController) {
+    }
 
-  ionViewDidLoad() {
-    console.log('Hello MainPage Page');
-  }
+    ionViewDidLoad() {
+        console.log('Hello MainPage Page');
+    }
+
+    ionViewWillEnter() {
+        this.menuController.enable(true);
+    }
+
+    ionViewWillLeave() {
+
+        if (this.menuController.isOpen()) {
+            this.menuController.close()
+                .then(() => {
+                    this.menuController.enable(false);
+                });
+        } else {
+            this.menuController.enable(false);
+        }
+    }
 
 }
