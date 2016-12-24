@@ -2,7 +2,6 @@ import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
 import {IndexPage} from "../pages/index/index";
-import {LoginPage} from "../pages/login/login";
 import {MainPage} from "../pages/main/main";
 
 
