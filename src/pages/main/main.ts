@@ -17,15 +17,13 @@ export class MainPage {
     }
 
     ionViewDidLoad() {
-        console.log('Hello MainPage Page');
     }
 
-    ionViewWillEnter() {
+    ionViewDidEnter() {
         this.menuController.enable(true);
     }
 
-    ionViewWillLeave() {
-
+    ionViewDidLeave() {
         if (this.menuController.isOpen()) {
             this.menuController.close()
                 .then(() => {
